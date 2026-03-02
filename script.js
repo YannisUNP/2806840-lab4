@@ -16,6 +16,9 @@ input.addEventListener("keydown", function(event){
 })
 async function loadData(countryName){
     try{
+        error.textContent = "";
+        info.innerHTML = "";
+        border.innerHTML = "";
         showSpinner();
         const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
         const data = await response.json();
